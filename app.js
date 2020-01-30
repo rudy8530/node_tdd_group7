@@ -11,4 +11,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('app/public'))
 
+app.get('/', (req, res) => {
+  res.status(200).send('Hello.')
+})
+
 module.exports = app
