@@ -18,6 +18,6 @@ app.get('/', (req, res) => {
 })
 
 authorRoutes(app, db)
-postRoutes(app, db)
+//postRoutes(app, db)
 
 module.exports = app

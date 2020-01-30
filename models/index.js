@@ -1,6 +1,10 @@
 'use strict';
 
-const fs = require('fs');
+const config = require(__dirname+ '/../config/config')
+var mongoose = require('mongoose');
+mongoose.connect("mongodb://mongo:27017/node_tdd_test", { useUnifiedTopology: true, useNewUrlParser: true},); 
+
+/*const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
@@ -39,3 +43,4 @@ db.close = async () => {
 };
 
 module.exports = db;
+*/

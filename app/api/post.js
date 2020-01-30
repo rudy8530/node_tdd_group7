@@ -1,4 +1,4 @@
-module.exports = (app, db) => {
+/*module.exports = (app, db) => {
     app.post('/post', async (req, res) => {
       await db.Post.create({
         title: req.body.title,
@@ -6,4 +6,4 @@ module.exports = (app, db) => {
         AuthorId: req.body.AuthorId,
       }).then((result) => res.json(result))
     })
-  }
+  }*/

@@ -1,16 +1,19 @@
-module.exports = (app, db) => {
+const Author = require ('../../models/author')
+
+module.exports = (app) => {
     app.post('/author', async (req, res) => {
-      await db.Author.create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-      }).then((result) => res.json(result))
-    })
+      var author = new Author({firstName:req.body.firstName,lastName: req.body.lastName})
+      await author.save(function(err){
+        if(err) console.error(err);
+      })
+        return res.status(200)
+  });
   
-    app.get('/authors', async (req, res) => {
+ /*   app.get('/authors', async (req, res) => {
       await db.Author.findAll(
         {attributes: ['id', 'firstName', 'lastName']}
       ).then((result) => {
         return res.json(result)
       })
-    })
+    })*/
   }
